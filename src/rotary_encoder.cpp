@@ -39,7 +39,3 @@ int mbed::lib_ygdstmidn::rotary_encoder::get_count()
 {
     return encode_count;
 }
-
-void a()
-{
-}

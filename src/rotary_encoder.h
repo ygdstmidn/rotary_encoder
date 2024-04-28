@@ -3,8 +3,6 @@
 
 #include "mbed.h"
 
-void a();
-
 namespace mbed
 {
 namespace lib_ygdstmidn
