@@ -1,12 +1,29 @@
 #include "rotary_encoder.h"
 
-mbed::lib_ygdstmidn::rotary_encoder::rotary_encoder(PinName pinA, PinName pinB, PinName switchpin)
+mbed::lib_ygdstmidn::rotary_encoder::rotary_encoder(PinName pinA, PinName pinB, PinName pinZ)
 {
-    read_encode_sw  =new DigitalIn(switchpin);
+    read_encode_z  =new DigitalIn(pinZ);
     wa_encode_pinA  =new InterruptIn(pinA);
     wa_encode_pinB  =new InterruptIn(pinB);
 
-    read_encode_sw->mode(PullUp);
+    read_encode_z->mode(PullUp);
+
+    wa_encode_pinA->rise(callback(this, &rotary_encoder::encode));//割り込み
+    wa_encode_pinA->fall(callback(this, &rotary_encoder::encode));
+    wa_encode_pinA->mode(PullUp);
+
+    wa_encode_pinB->rise(callback(this, &rotary_encoder::encode));
+    wa_encode_pinB->fall(callback(this, &rotary_encoder::encode));
+    wa_encode_pinB->mode(PullUp);
+}
+
+mbed::lib_ygdstmidn::rotary_encoder::rotary_encoder(PinName pinA, PinName pinB)
+{
+    read_encode_z  =NULL;
+    wa_encode_pinA  =new InterruptIn(pinA);
+    wa_encode_pinB  =new InterruptIn(pinB);
+
+    // read_encode_z->mode(PullUp);
 
     wa_encode_pinA->rise(callback(this, &rotary_encoder::encode));//割り込み
     wa_encode_pinA->fall(callback(this, &rotary_encoder::encode));
@@ -35,7 +52,7 @@ void mbed::lib_ygdstmidn::rotary_encoder::encode()
     }
 }
 
-int mbed::lib_ygdstmidn::rotary_encoder::get_count()
+int mbed::lib_ygdstmidn::rotary_encoder::get_count()const
 {
     return encode_count;
 }
