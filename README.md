@@ -4,6 +4,12 @@ namespaceはmbed::lib_ygdstmidnです．ヘッダファイル内でusingして�
 
 # 使い方
 
+↓一覧です．
+```c++
+rotary_encoder(PinName pinA,PinName pinB,PinName pinZ);
+int get_count()const;
+```
+
 ## 初期化
 `rotary_encoder rorikonname(pinA,pinB,pinZ);`
 `rotary_encoder rorikonname(pinA,pinB);`
