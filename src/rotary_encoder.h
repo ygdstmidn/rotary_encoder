@@ -1,7 +1,8 @@
 #ifndef INCLUDE_ROTARY_ENCODER_H
 #define INCLUDE_ROTARY_ENCODER_H
 
-#include "mbed.h"
+#include "mbed.h".
+#include "rotary_encoder_config.h"
 
 namespace mbed
 {
@@ -23,8 +24,7 @@ public:
     void encode();
 public:
     /**
-     * @brief ロータリーエンコーダの値を読み取るためのインスタンスを作成します
-     * @brief 初期化の際にプログラム上でPULLUPするので，他でプルアップする必要はありません
+     * ロータリーエンコーダの値を読み取るためのインスタンスを作成します
      * @param pinA ロータリーエンコーダのAチャンネル
      * @param pinB ロータリーエンコーダのBチャンネル
      * @param pinZ ロータリーエンコーダのZチャンネル,INDEXチャンネル
@@ -33,7 +33,6 @@ public:
 
     /**
      * ロータリーエンコーダの値を読み取るためのインスタンスを作成します
-     * 初期化の際にプログラム上でPULLUPするので，他でプルアップする必要はありません
      * @param pinA ロータリーエンコーダのAチャンネル
      * @param pinB ロータリーエンコーダのBチャンネル
     */
