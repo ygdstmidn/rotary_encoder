@@ -1,12 +1,12 @@
 # このライブラリについて
-ロータリーエンコーダを使うためのライブラリです．
+ロータリーエンコーダを使うためのライブラリです．<br>
 namespaceはmbed::lib_ygdstmidnです．ヘッダファイル内でusingしています．
 
 # 使い方
 
 ## rotary_encoder_config.hについて
 
-rotary_encoder_config.hの内容はクラスに適用されます．
+rotary_encoder_config.hの内容はクラスに適用されます．<br>
 よって，インスタンスごとに違う内容を設定したいときは，インスタンスごとで設定しなければなりません．
 
 ### DEFAULT_PINMODE
@@ -15,7 +15,7 @@ rotary_encoder_config.hの内容はクラスに適用されます．
 #define DEFAULT_PIN_B_PINMODE       PullUp
 #define DEFAULT_PIN_Z_PINMODE       PullUp
 ```
-開発ボードのプルアップ抵抗をonにするか，offにするかを選択します．
+開発ボードのプルアップ抵抗をonにするか，offにするかを選択します．<br>
 開発ボードにそのまま接続するときはPullUp，プルアップ抵抗を入れているときはPullNoneにすると良いと思います．
 
 ## プログラム
@@ -38,7 +38,7 @@ pinB – ロータリーエンコーダのBチャンネル<br>
 pinZ – ロータリーエンコーダのZチャンネル,INDEXチャンネル(省略可)<br>
 
 ### ロータリーエンコーダの値を読み取る
-`val = rorikonname.get_count();`
+`val = rorikonname.get_count();`<br>
 ロータリーエンコーダの変位を返します．<br>
 int型の値が返ってきます．
 
@@ -46,7 +46,7 @@ int型の値が返ってきます．
 ロータリーエンコーダの変位(int)
 
 ### ピンのmodeを変える
-`void set_pinmode(PinMode pinA,PinMode pinB,PinMode pinZ);`
+`void set_pinmode(PinMode pinA,PinMode pinB,PinMode pinZ);`<br>
 それぞれのピンごとにmodeを設定します．<br>
 PullUp, PullDown, PullNone, OpenDrain
 
