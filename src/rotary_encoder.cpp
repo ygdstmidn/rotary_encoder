@@ -56,3 +56,13 @@ int mbed::lib_ygdstmidn::rotary_encoder::get_count()const
 {
     return encode_count;
 }
+
+void mbed::lib_ygdstmidn::rotary_encoder::set_pinmode(PinMode pinA, PinMode pinB, PinMode pinZ)
+{
+    wa_encode_pinA->mode(pinA);
+    wa_encode_pinB->mode(pinB);
+    if (read_encode_z!=nullptr)
+    {
+        read_encode_z->mode(pinZ);
+    }
+}

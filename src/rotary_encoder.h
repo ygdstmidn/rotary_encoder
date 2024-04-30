@@ -44,6 +44,16 @@ public:
      * @return ロータリーエンコーダの変位(int)
     */
     int get_count()const;
+
+    /**
+     * それぞれのピンごとにmodeを設定します．
+     * PullUp, PullDown, PullNone, OpenDrain
+     * @param pinA Aチャンネルのmode
+     * @param pinB Bチャンネルのmode
+     * @param pinZ Zチャンネルのmode
+     * @note Zチャンネルを設定していない場合，modeは設定されません．
+    */
+    void set_pinmode(PinMode pinA,PinMode pinB,PinMode pinZ);
 };
 
 }//namespace lib_ygdstmidn
