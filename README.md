@@ -46,7 +46,7 @@ int型の値が返ってきます．
 ロータリーエンコーダの変位(int)
 
 ### ピンのmodeを変える
-`void set_pinmode(PinMode pinA,PinMode pinB,PinMode pinZ);`<br>
+`rorikonname.set_pinmode(pinA_mode,pinB_mode,pinZ_mode);`<br>
 それぞれのピンごとにmodeを設定します．<br>
 PullUp, PullDown, PullNone, OpenDrain
 
