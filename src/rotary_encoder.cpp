@@ -1,5 +1,10 @@
 #include "rotary_encoder.h"
 
+namespace mbed
+{
+namespace lib_ygdstmidn
+{
+
 mbed::lib_ygdstmidn::rotary_encoder::rotary_encoder(PinName pinA, PinName pinB, PinName pinZ)
 {
     read_encode_z  =new DigitalIn(pinZ);
@@ -66,3 +71,6 @@ void mbed::lib_ygdstmidn::rotary_encoder::set_pinmode(PinMode pinA, PinMode pinB
         read_encode_z->mode(pinZ);
     }
 }
+
+}//namespace lib_ygdstmidn
+}//namespace mbed
