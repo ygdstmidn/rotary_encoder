@@ -27,6 +27,8 @@ int get_count()const;
 void set_pinmode(PinMode pinA,PinMode pinB,PinMode pinZ);
 ```
 
+rotary_encoderという名前のクラスがあるので，ロータリーエンコーダ一つ一つごとにインスタンスを作成してください．<br>
+
 ### 初期化
 `rotary_encoder rorikonname(pinA,pinB,pinZ);`<br>
 `rotary_encoder rorikonname(pinA,pinB);`<br>
