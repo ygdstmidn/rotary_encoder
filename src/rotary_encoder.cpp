@@ -77,5 +77,15 @@ void rotary_encoder::set_ppr(uint set_ppr_uint)
     ppr=set_ppr_uint;
 }
 
+double rotary_encoder::get_angle()
+{
+    return (double)encode_count*360.0/ppr;
+}
+
+double rotary_encoder::get_angle_radian()
+{
+    return (double)encode_count/ppr*2.0*M_PI;
+}
+
 }//namespace lib_ygdstmidn
 }//namespace mbed

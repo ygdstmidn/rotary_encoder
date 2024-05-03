@@ -32,6 +32,8 @@ rotary_encoder(PinName pinA,PinName pinB,PinName pinZ);
 int get_count()const;
 void set_pinmode(PinMode pinA,PinMode pinB,PinMode pinZ);
 void set_ppr(uint set_ppr_uint);
+double get_angle();
+double get_angle_radian();
 ```
 
 rotary_encoderという名前のクラスがあるので，ロータリーエンコーダ一つ一つごとにインスタンスを作成してください．<br>
@@ -83,3 +85,22 @@ rorikonname.set_ppr(ppr);
 
 パラメーター:<br>
 ppr – 設定したいPPR<br>
+
+### ロータリーエンコーダの角度を取得する
+```c++
+val = rorikonname.get_angle();
+```
+ロータリーエンコーダの角度を返します(度数法)．
+
+戻り値:<br>
+ロータリーエンコーダの角度(double)
+
+### ロータリーエンコーダの角度を弧度法で取得する
+```c++
+val = rorikonname.get_angle_radian();
+```
+ロータリーエンコーダの角度を返します(弧度法)．
+
+戻り値:<br>
+ロータリーエンコーダの角度(double)
+

@@ -61,6 +61,18 @@ public:
      * @param set_ppr_uint 設定したいPPR
     */
     void set_ppr(uint set_ppr_uint);
+
+    /**
+     * ロータリーエンコーダの角度を返します(度数法)．
+     * @return ロータリーエンコーダの角度(double)
+    */
+    double get_angle();
+
+    /**
+     * ロータリーエンコーダの角度を返します(弧度法)．
+     * @return ロータリーエンコーダの角度(double)
+    */
+    double get_angle_radian();
 };
 
 }//namespace lib_ygdstmidn
