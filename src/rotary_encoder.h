@@ -9,12 +9,13 @@ namespace mbed
 namespace lib_ygdstmidn
 {
 
+const int encode_table[16] = {0, -1, 1, 0, 1, 0, 0, -1, -1, 0, 0, 1, 0, 1, -1, 0};
+
 class rotary_encoder
 {
-// private:
-public:
-    const int encode_table[16] = {0, -1, 1, 0, 1, 0, 0, -1, -1, 0, 0, 1, 0, 1, -1, 0};
+private:
     int encode_count=0;
+    uint ppr=RORIKON_DEFAULT_PPR;
 
     DigitalIn *read_encode_z;
 
@@ -54,6 +55,12 @@ public:
      * @note Zチャンネルを設定していない場合，modeは設定されません．
     */
     void set_pinmode(PinMode pinA,PinMode pinB,PinMode pinZ);
+
+    /**
+     * ロータリーエンコーダのPPRを設定します．
+     * @param set_ppr_uint 設定したいPPR
+    */
+    void set_ppr(uint set_ppr_uint);
 };
 
 }//namespace lib_ygdstmidn

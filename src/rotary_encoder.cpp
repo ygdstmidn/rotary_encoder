@@ -72,5 +72,10 @@ void mbed::lib_ygdstmidn::rotary_encoder::set_pinmode(PinMode pinA, PinMode pinB
     }
 }
 
+void rotary_encoder::set_ppr(uint set_ppr_uint)
+{
+    ppr=set_ppr_uint;
+}
+
 }//namespace lib_ygdstmidn
 }//namespace mbed

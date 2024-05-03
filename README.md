@@ -11,12 +11,18 @@ rotary_encoder_config.hの内容はクラスに適用されます．<br>
 
 ### DEFAULT_PINMODE
 ```rotary_encoder_config.h
-#define DEFAULT_PIN_A_PINMODE       PullUp
-#define DEFAULT_PIN_B_PINMODE       PullUp
-#define DEFAULT_PIN_Z_PINMODE       PullUp
+#define RORIKON_DEFAULT_PIN_A_PINMODE       PullUp
+#define RORIKON_DEFAULT_PIN_B_PINMODE       PullUp
+#define RORIKON_DEFAULT_PIN_Z_PINMODE       PullUp
 ```
 開発ボードのプルアップ抵抗をonにするか，offにするかを選択します．<br>
 開発ボードにそのまま接続するときはPullUp，プルアップ抵抗を入れているときはPullNoneにすると良いと思います．
+
+### PPR
+```rotary_encoder_config.h
+#define RORIKON_DEFAULT_PPR                 400
+```
+ロータリーエンコーダのPPR(Pulses Per Revolution)，1回転当たりのパルス数を設定します．分解能ともいうそうです．
 
 ## プログラム
 
@@ -25,6 +31,7 @@ rotary_encoder_config.hの内容はクラスに適用されます．<br>
 rotary_encoder(PinName pinA,PinName pinB,PinName pinZ);
 int get_count()const;
 void set_pinmode(PinMode pinA,PinMode pinB,PinMode pinZ);
+void set_ppr(uint set_ppr_uint);
 ```
 
 rotary_encoderという名前のクラスがあるので，ロータリーエンコーダ一つ一つごとにインスタンスを作成してください．<br>
@@ -53,9 +60,16 @@ int型の値が返ってきます．
 PullUp, PullDown, PullNone, OpenDrain
 
 パラメーター:<br>
-pinA – Aチャンネルのmode<br>
-pinB – Bチャンネルのmode<br>
-pinZ – Zチャンネルのmode<br>
+pinA_mode – Aチャンネルのmode<br>
+pinB_mode – Bチャンネルのmode<br>
+pinZ_mode – Zチャンネルのmode<br>
 
 注:<br>
 Zチャンネルを設定していない場合，modeは設定されません．<br>
+
+### ロータリーエンコーダのPPRを変える
+`rorikonname.set_ppr(ppr);`<br>
+ロータリーエンコーダのPPRを設定します．
+
+パラメーター:<br>
+ppr – 設定したいPPR<br>
