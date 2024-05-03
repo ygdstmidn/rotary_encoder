@@ -37,8 +37,12 @@ void set_ppr(uint set_ppr_uint);
 rotary_encoderという名前のクラスがあるので，ロータリーエンコーダ一つ一つごとにインスタンスを作成してください．<br>
 
 ### 初期化
-`rotary_encoder rorikonname(pinA,pinB,pinZ);`<br>
-`rotary_encoder rorikonname(pinA,pinB);`<br>
+```c++
+rotary_encoder rorikonname(pinA,pinB,pinZ);
+```
+```c++
+rotary_encoder rorikonname(pinA,pinB);
+```
 ロータリーエンコーダの値を読み取るためのインスタンスを作成します
 
 パラメーター:<br>
@@ -47,7 +51,9 @@ pinB – ロータリーエンコーダのBチャンネル<br>
 pinZ – ロータリーエンコーダのZチャンネル,INDEXチャンネル(省略可)<br>
 
 ### ロータリーエンコーダの値を読み取る
-`val = rorikonname.get_count();`<br>
+```c++
+val = rorikonname.get_count();
+```
 ロータリーエンコーダの変位を返します．<br>
 int型の値が返ってきます．
 
@@ -55,7 +61,9 @@ int型の値が返ってきます．
 ロータリーエンコーダの変位(int)
 
 ### ピンのmodeを変える
-`rorikonname.set_pinmode(pinA_mode,pinB_mode,pinZ_mode);`<br>
+```c++
+rorikonname.set_pinmode(pinA_mode,pinB_mode,pinZ_mode);
+```
 それぞれのピンごとにmodeを設定します．<br>
 PullUp, PullDown, PullNone, OpenDrain
 
@@ -68,7 +76,9 @@ pinZ_mode – Zチャンネルのmode<br>
 Zチャンネルを設定していない場合，modeは設定されません．<br>
 
 ### ロータリーエンコーダのPPRを変える
-`rorikonname.set_ppr(ppr);`<br>
+```c++
+rorikonname.set_ppr(ppr);
+```
 ロータリーエンコーダのPPRを設定します．
 
 パラメーター:<br>
