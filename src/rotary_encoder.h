@@ -7,6 +7,9 @@
 #ifndef M_PI//M_PIが定義されていないならば定義
 #define M_PI		3.14159265358979323846
 #endif//M_PI
+#ifndef _SYS_TYPES_H//uintが定義されていないならば定義
+typedef	unsigned int	uint;		/* System V compatibility */
+#endif//_SYS_TYPES_H
 
 namespace mbed
 {
