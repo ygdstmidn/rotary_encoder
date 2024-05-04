@@ -11,16 +11,16 @@ rotary_encoder_config.hの内容はクラスに適用されます．<br>
 
 ### DEFAULT_PINMODE
 ```rotary_encoder_config.h
-#define RORIKON_DEFAULT_PIN_A_PINMODE       PullUp
-#define RORIKON_DEFAULT_PIN_B_PINMODE       PullUp
-#define RORIKON_DEFAULT_PIN_Z_PINMODE       PullUp
+#define ROTARY_ENCODER_DEFAULT_PIN_A_PINMODE       PullUp
+#define ROTARY_ENCODER_DEFAULT_PIN_B_PINMODE       PullUp
+#define ROTARY_ENCODER_DEFAULT_PIN_Z_PINMODE       PullUp
 ```
 開発ボードのプルアップ抵抗をonにするか，offにするかを選択します．<br>
 開発ボードにそのまま接続するときはPullUp，プルアップ抵抗を入れているときはPullNoneにすると良いと思います．
 
 ### PPR
 ```rotary_encoder_config.h
-#define RORIKON_DEFAULT_PPR                 400
+#define ROTARY_ENCODER_DEFAULT_PPR                 400
 ```
 ロータリーエンコーダのPPR(Pulses Per Revolution)，1回転当たりのパルス数を設定します．分解能ともいうそうです．
 
@@ -40,10 +40,10 @@ rotary_encoderという名前のクラスがあるので，ロータリーエン
 
 ### 初期化
 ```c++
-rotary_encoder rorikonname(pinA,pinB,pinZ);
+rotary_encoder name(pinA,pinB,pinZ);
 ```
 ```c++
-rotary_encoder rorikonname(pinA,pinB);
+rotary_encoder name(pinA,pinB);
 ```
 ロータリーエンコーダの値を読み取るためのインスタンスを作成します
 
@@ -54,7 +54,7 @@ pinZ – ロータリーエンコーダのZチャンネル,INDEXチャンネル(
 
 ### ロータリーエンコーダの値を読み取る
 ```c++
-val = rorikonname.get_count();
+val = name.get_count();
 ```
 ロータリーエンコーダの変位を返します．<br>
 int型の値が返ってきます．
@@ -64,7 +64,7 @@ int型の値が返ってきます．
 
 ### ピンのmodeを変える
 ```c++
-rorikonname.set_pinmode(pinA_mode,pinB_mode,pinZ_mode);
+name.set_pinmode(pinA_mode,pinB_mode,pinZ_mode);
 ```
 それぞれのピンごとにmodeを設定します．<br>
 PullUp, PullDown, PullNone, OpenDrain
@@ -79,7 +79,7 @@ Zチャンネルを設定していない場合，modeは設定されません．
 
 ### ロータリーエンコーダのPPRを変える
 ```c++
-rorikonname.set_ppr(ppr);
+name.set_ppr(ppr);
 ```
 ロータリーエンコーダのPPRを設定します．
 
@@ -88,7 +88,7 @@ ppr – 設定したいPPR<br>
 
 ### ロータリーエンコーダの角度を取得する
 ```c++
-val = rorikonname.get_angle();
+val = name.get_angle();
 ```
 ロータリーエンコーダの角度を返します(度数法)．
 
@@ -97,7 +97,7 @@ val = rorikonname.get_angle();
 
 ### ロータリーエンコーダの角度を弧度法で取得する
 ```c++
-val = rorikonname.get_angle_radian();
+val = name.get_angle_radian();
 ```
 ロータリーエンコーダの角度を返します(弧度法)．
 

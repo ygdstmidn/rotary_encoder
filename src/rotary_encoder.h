@@ -15,7 +15,7 @@ class rotary_encoder
 {
 private:
     int encode_count=0;
-    uint ppr=RORIKON_DEFAULT_PPR;
+    uint ppr=ROTARY_ENCODER_DEFAULT_PPR;
 
     DigitalIn *read_encode_z;
 

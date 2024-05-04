@@ -11,15 +11,15 @@ mbed::lib_ygdstmidn::rotary_encoder::rotary_encoder(PinName pinA, PinName pinB, 
     wa_encode_pinA  =new InterruptIn(pinA);
     wa_encode_pinB  =new InterruptIn(pinB);
 
-    read_encode_z->mode(RORIKON_DEFAULT_PIN_Z_PINMODE);
+    read_encode_z->mode(ROTARY_ENCODER_DEFAULT_PIN_Z_PINMODE);
 
     wa_encode_pinA->rise(callback(this, &rotary_encoder::encode));//割り込み
     wa_encode_pinA->fall(callback(this, &rotary_encoder::encode));
-    wa_encode_pinA->mode(RORIKON_DEFAULT_PIN_A_PINMODE);
+    wa_encode_pinA->mode(ROTARY_ENCODER_DEFAULT_PIN_A_PINMODE);
 
     wa_encode_pinB->rise(callback(this, &rotary_encoder::encode));
     wa_encode_pinB->fall(callback(this, &rotary_encoder::encode));
-    wa_encode_pinB->mode(RORIKON_DEFAULT_PIN_B_PINMODE);
+    wa_encode_pinB->mode(ROTARY_ENCODER_DEFAULT_PIN_B_PINMODE);
 }
 
 mbed::lib_ygdstmidn::rotary_encoder::rotary_encoder(PinName pinA, PinName pinB)
@@ -28,15 +28,15 @@ mbed::lib_ygdstmidn::rotary_encoder::rotary_encoder(PinName pinA, PinName pinB)
     wa_encode_pinA  =new InterruptIn(pinA);
     wa_encode_pinB  =new InterruptIn(pinB);
 
-    // read_encode_z->mode(RORIKON_DEFAULT_PIN_Z_PINMODE);
+    // read_encode_z->mode(ROTARY_ENCODER_DEFAULT_PIN_Z_PINMODE);
 
     wa_encode_pinA->rise(callback(this, &rotary_encoder::encode));//割り込み
     wa_encode_pinA->fall(callback(this, &rotary_encoder::encode));
-    wa_encode_pinA->mode(RORIKON_DEFAULT_PIN_A_PINMODE);
+    wa_encode_pinA->mode(ROTARY_ENCODER_DEFAULT_PIN_A_PINMODE);
 
     wa_encode_pinB->rise(callback(this, &rotary_encoder::encode));
     wa_encode_pinB->fall(callback(this, &rotary_encoder::encode));
-    wa_encode_pinB->mode(RORIKON_DEFAULT_PIN_B_PINMODE);
+    wa_encode_pinB->mode(ROTARY_ENCODER_DEFAULT_PIN_B_PINMODE);
 }
 
 mbed::lib_ygdstmidn::rotary_encoder::~rotary_encoder()

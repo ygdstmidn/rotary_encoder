@@ -6,11 +6,11 @@ namespace mbed
 namespace lib_ygdstmidn
 {
 
-#define RORIKON_DEFAULT_PIN_A_PINMODE       PullUp
-#define RORIKON_DEFAULT_PIN_B_PINMODE       PullUp
-#define RORIKON_DEFAULT_PIN_Z_PINMODE       PullUp
+#define ROTARY_ENCODER_DEFAULT_PIN_A_PINMODE       PullUp
+#define ROTARY_ENCODER_DEFAULT_PIN_B_PINMODE       PullUp
+#define ROTARY_ENCODER_DEFAULT_PIN_Z_PINMODE       PullUp
 
-#define RORIKON_DEFAULT_PPR                 400
+#define ROTARY_ENCODER_DEFAULT_PPR                 400
 
 }//namespace lib_ygdstmidn
 }//namespace mbed
