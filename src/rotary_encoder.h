@@ -4,6 +4,10 @@
 #include "mbed.h".
 #include "rotary_encoder_config.h"
 
+#ifndef M_PI//M_PIが定義されていないならば定義
+#define M_PI		3.14159265358979323846
+#endif//M_PI
+
 namespace mbed
 {
 namespace lib_ygdstmidn
@@ -74,7 +78,7 @@ public:
      * @return ロータリーエンコーダの角度(double)
     */
     double get_angle_radian();
-    
+
 };//class rotary_encoder
 
 }//namespace lib_ygdstmidn
@@ -82,4 +86,4 @@ public:
 
 using namespace mbed::lib_ygdstmidn;
 
-#endif
+#endif//INCLUDE_ROTARY_ENCODER_H
