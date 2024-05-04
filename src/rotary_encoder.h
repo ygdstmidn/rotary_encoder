@@ -23,6 +23,7 @@ private:
     InterruptIn *wa_encode_pinB;
 
     void encode();
+
 public:
     /**
      * ロータリーエンコーダの値を読み取るためのインスタンスを作成します
@@ -73,7 +74,8 @@ public:
      * @return ロータリーエンコーダの角度(double)
     */
     double get_angle_radian();
-};
+    
+};//class rotary_encoder
 
 }//namespace lib_ygdstmidn
 }//namespace mbed
