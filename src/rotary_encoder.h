@@ -21,7 +21,9 @@ const int encode_table[16] = {0, -1, 1, 0, 1, 0, 0, -1, -1, 0, 0, 1, 0, 1, -1, 0
 class rotary_encoder
 {
 private:
+
     int encode_count=0;
+    uint gear_teeth=1;
     uint ppr=ROTARY_ENCODER_DEFAULT_PPR;
 
     DigitalIn *read_encode_z;
@@ -32,6 +34,7 @@ private:
     void encode();
 
 public:
+
     /**
      * ロータリーエンコーダの値を読み取るためのインスタンスを作成します
      * @param pinA ロータリーエンコーダのAチャンネル
@@ -46,6 +49,7 @@ public:
      * @param pinB ロータリーエンコーダのBチャンネル
     */
     rotary_encoder(PinName pinA,PinName pinB);
+
     ~rotary_encoder();
 
     /**
@@ -82,7 +86,45 @@ public:
     */
     double get_angle_radian();
 
+    /**
+     * ロータリーエンコーダについているギアの歯数を設定します．
+     * @param set_teeth_uint 設定したい歯数
+    */
+    void set_teeth(uint set_teeth_uint);
+
+    /**
+     * ロータリーエンコーダについているギアの歯数を返します．
+     * @return 設定されているギアの歯数
+    */
+    uint get_teeth();
+
 };//class rotary_encoder
+
+class rotary_encoder_gear
+{
+private:
+
+    uint gear_teeth=1;
+
+    rotary_encoder *rotary_encoder_ins;
+    rotary_encoder_gear *gear_ins;
+
+public:
+
+    /**
+     * ロータリーエンコーダにくっつけるギアのインスタンスを作成します．
+     * @param rotary_encoder_address くっつけるロータリーエンコーダのアドレス
+    */
+    rotary_encoder_gear(rotary_encoder *rotary_encoder_address);
+
+    /**
+     * ギアにくっつけるギアのインスタンスを作成します．
+     * @param rotary_encoder_gear_address くっつけるギアのアドレス
+    */
+    rotary_encoder_gear(rotary_encoder_gear *rotary_encoder_gear_address);
+
+    ~rotary_encoder_gear();
+};
 
 }//namespace lib_ygdstmidn
 }//namespace mbed

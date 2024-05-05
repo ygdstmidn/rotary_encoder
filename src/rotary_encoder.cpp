@@ -41,6 +41,9 @@ mbed::lib_ygdstmidn::rotary_encoder::rotary_encoder(PinName pinA, PinName pinB)
 
 mbed::lib_ygdstmidn::rotary_encoder::~rotary_encoder()
 {
+    delete read_encode_z;
+    delete wa_encode_pinA;
+    delete wa_encode_pinB;
 }
 
 void mbed::lib_ygdstmidn::rotary_encoder::encode()
@@ -87,5 +90,31 @@ double rotary_encoder::get_angle_radian()
     return (double)encode_count/ppr*2.0*M_PI;
 }
 
-}//namespace lib_ygdstmidn
+void rotary_encoder::set_teeth(uint set_teeth_uint)
+{
+    gear_teeth=set_teeth_uint;
+}
+
+uint rotary_encoder::get_teeth()
+{
+    return gear_teeth;
+}
+
+rotary_encoder_gear::rotary_encoder_gear(rotary_encoder *rotary_encoder_address)
+{
+    rotary_encoder_ins=rotary_encoder_address;
+    gear_ins=nullptr;
+}
+
+rotary_encoder_gear::rotary_encoder_gear(rotary_encoder_gear *rotary_encoder_gear_address)
+{
+    rotary_encoder_ins=nullptr;
+    gear_ins=rotary_encoder_gear_address;
+}
+
+rotary_encoder_gear::~rotary_encoder_gear()
+{
+}
+
+} // namespace lib_ygdstmidn
 }//namespace mbed
