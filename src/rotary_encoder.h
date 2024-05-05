@@ -78,13 +78,13 @@ public:
      * ロータリーエンコーダの角度を返します(度数法)．
      * @return ロータリーエンコーダの角度(double)
     */
-    double get_angle();
+    double get_angle()const;
 
     /**
      * ロータリーエンコーダの角度を返します(弧度法)．
      * @return ロータリーエンコーダの角度(double)
     */
-    double get_angle_radian();
+    double get_angle_radian()const;
 
     /**
      * ロータリーエンコーダについているギアの歯数を設定します．
@@ -96,7 +96,7 @@ public:
      * 設定されているギアの歯数を返します．
      * @return 設定されているギアの歯数
     */
-    uint get_teeth();
+    uint get_teeth()const;
 
 };//class rotary_encoder
 
@@ -136,7 +136,7 @@ public:
      * 設定されているギアの歯数を返します．
      * @return 設定されているギアの歯数
     */
-    uint get_teeth();
+    uint get_teeth()const;
 };
 
 }//namespace lib_ygdstmidn

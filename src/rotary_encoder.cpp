@@ -80,12 +80,12 @@ void rotary_encoder::set_ppr(uint set_ppr_uint)
     ppr=set_ppr_uint;
 }
 
-double rotary_encoder::get_angle()
+double rotary_encoder::get_angle()const
 {
     return (double)encode_count*360.0/ppr;
 }
 
-double rotary_encoder::get_angle_radian()
+double rotary_encoder::get_angle_radian()const
 {
     return (double)encode_count/ppr*2.0*M_PI;
 }
@@ -98,7 +98,7 @@ void rotary_encoder::set_teeth(uint set_teeth_uint)
     }
 }
 
-uint rotary_encoder::get_teeth()
+uint rotary_encoder::get_teeth()const
 {
     return gear_teeth;
 }
@@ -133,7 +133,7 @@ void rotary_encoder_gear::set_teeth(uint set_teeth_uint)
     }
 }
 
-uint rotary_encoder_gear::get_teeth()
+uint rotary_encoder_gear::get_teeth()const
 {
     return gear_teeth;
 }
