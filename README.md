@@ -118,17 +118,74 @@ val = name.get_angle_radian();
 ロータリーエンコーダの角度(double)
 
 #### ロータリーエンコーダについているギアの歯数を設定する
+```c++
+name.set_teeth(teeth);
+```
+ロータリーエンコーダについているギアの歯数を設定します．
+
+パラメーター:<br>
+teeth – 設定したい歯数
 
 #### 設定されているギアの歯数を取得する
+```c++
+val = name.get_teeth();
+```
+設定されているギアの歯数を返します．
+
+戻り値:<br>
+設定されているギアの歯数
 
 ### rotary_encoder_gearクラス
 
 #### 初期化
+```c++
+rotary_encoder_gear gearname(*rotary_encoder_address);
+```
+ロータリーエンコーダにくっつけるギアのインスタンスを作成します．
 
-#### ギアの角度を取得する
+パラメーター:<br>
+rotary_encoder_address – くっつけるロータリーエンコーダのアドレス
 
-#### ギアの角度を弧度法で取得する
+```c++
+rotary_encoder_gear gearname(*rotary_encoder_gear_address);
+```
+ギアにくっつけるギアのインスタンスを作成します．<br>
+
+パラメーター:<br>
+rotary_encoder_gear_address – くっつけるギアのアドレス
 
 #### ギアの歯数を設定する
+```c++
+gearname.set_teeth(teeth);
+```
+ギアの歯数を設定します．
+
+パラメーター:<br>
+teeth – 設定したい歯数
 
 #### 設定されているギアの歯数を取得する
+```c++
+val = gearname.get_teeth();
+```
+設定されているギアの歯数を返します．
+
+戻り値:<br>
+設定されているギアの歯数
+
+#### ギアの角度を取得する
+```c++
+val = gearname.get_angle();
+```
+ギアの角度を返します(度数法)．
+
+戻り値:<br>
+ギアの角度(double)
+
+#### ギアの角度を弧度法で取得する
+```c++
+val = gearname.get_angle_radian();
+```
+ギアの角度を返します(弧度法)．
+
+戻り値:<br>
+ギアの角度(double)
