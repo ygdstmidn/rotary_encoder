@@ -92,7 +92,10 @@ double rotary_encoder::get_angle_radian()
 
 void rotary_encoder::set_teeth(uint set_teeth_uint)
 {
-    gear_teeth=set_teeth_uint;
+    if(set_teeth_uint!=0)
+    {
+        gear_teeth=set_teeth_uint;
+    }
 }
 
 uint rotary_encoder::get_teeth()
@@ -124,7 +127,10 @@ rotary_encoder_gear::~rotary_encoder_gear()
 
 void rotary_encoder_gear::set_teeth(uint set_teeth_uint)
 {
-    gear_teeth=set_teeth_uint;
+    if(set_teeth_uint!=0)
+    {
+        gear_teeth=set_teeth_uint;
+    }
 }
 
 uint rotary_encoder_gear::get_teeth()
