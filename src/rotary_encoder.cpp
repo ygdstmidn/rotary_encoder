@@ -138,5 +138,27 @@ uint rotary_encoder_gear::get_teeth()const
     return gear_teeth;
 }
 
+double rotary_encoder_gear::get_angle() const
+{
+    if(rotary_encoder_ins==nullptr)
+    {
+        return (gear_ins->get_angle())*(gear_ins->get_teeth())/(gear_teeth);
+    }else
+    {
+        return (rotary_encoder_ins->get_angle())*(rotary_encoder_ins->get_teeth())/(gear_teeth);
+    }
+}
+
+double rotary_encoder_gear::get_angle_radian() const
+{
+    if(rotary_encoder_ins==nullptr)
+    {
+        return (gear_ins->get_angle_radian())*(gear_ins->get_teeth())/(gear_teeth);
+    }else
+    {
+        return (rotary_encoder_ins->get_angle_radian())*(rotary_encoder_ins->get_teeth())/(gear_teeth);
+    }
+}
+
 } // namespace lib_ygdstmidn
 }//namespace mbed

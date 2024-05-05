@@ -137,6 +137,18 @@ public:
      * @return 設定されているギアの歯数
     */
     uint get_teeth()const;
+
+    /**
+     * ギアの角度を返します(度数法)．
+     * @return ギアの角度(double)
+    */
+    double get_angle()const;
+
+    /**
+     * ギアの角度を返します(弧度法)．
+     * @return ギアの角度(double)
+    */
+    double get_angle_radian()const;
 };
 
 }//namespace lib_ygdstmidn
