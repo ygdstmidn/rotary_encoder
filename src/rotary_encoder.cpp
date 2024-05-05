@@ -104,12 +104,16 @@ rotary_encoder_gear::rotary_encoder_gear(rotary_encoder *rotary_encoder_address)
 {
     rotary_encoder_ins=rotary_encoder_address;
     gear_ins=nullptr;
+
+    rotary_encoder_teeth=rotary_encoder_ins->get_teeth();
 }
 
 rotary_encoder_gear::rotary_encoder_gear(rotary_encoder_gear *rotary_encoder_gear_address)
 {
     rotary_encoder_ins=nullptr;
     gear_ins=rotary_encoder_gear_address;
+
+    rotary_encoder_teeth=gear_ins->gear_teeth();
 }
 
 rotary_encoder_gear::~rotary_encoder_gear()

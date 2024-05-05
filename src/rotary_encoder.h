@@ -104,6 +104,7 @@ class rotary_encoder_gear
 {
 private:
 
+    uint rotary_encoder_teeth;
     uint gear_teeth=1;
 
     rotary_encoder *rotary_encoder_ins;
