@@ -28,12 +28,22 @@ rotary_encoder_config.hの内容はクラスに適用されます．<br>
 
 ↓一覧です．
 ```c++
+//rotary_encoderクラス
 rotary_encoder(PinName pinA,PinName pinB,PinName pinZ);
 int get_count()const;
 void set_pinmode(PinMode pinA,PinMode pinB,PinMode pinZ);
 void set_ppr(uint set_ppr_uint);
-double get_angle();
-double get_angle_radian();
+double get_angle()const;
+double get_angle_radian()const;
+void set_teeth(uint set_teeth_uint);
+uint get_teeth()const;
+//rotary_encoder_gearクラス
+rotary_encoder_gear(rotary_encoder *rotary_encoder_address);
+rotary_encoder_gear(rotary_encoder_gear *rotary_encoder_gear_address);
+void set_teeth(uint set_teeth_uint);
+uint get_teeth()const;
+double get_angle()const;
+double get_angle_radian()const;
 ```
 
 rotary_encoderという名前のクラスがあるので，ロータリーエンコーダ一つ一つごとにインスタンスを作成してください．<br>
