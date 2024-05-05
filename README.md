@@ -46,9 +46,12 @@ double get_angle()const;
 double get_angle_radian()const;
 ```
 
-rotary_encoderという名前のクラスがあるので，ロータリーエンコーダ一つ一つごとにインスタンスを作成してください．<br>
+rotary_encoderという名前のクラスがあるので，ロータリーエンコーダ一つ一つごとにrotary_encoderのインスタンスを作成してください．<br>
+ロータリーエンコーダにつながっているギアがある場合，そのギアごとにrotary_encoder_gearのインスタンスを作成してください．<br>
 
-### 初期化
+### rotary_encoderクラス
+
+#### 初期化
 ```c++
 rotary_encoder name(pinA,pinB,pinZ);
 ```
@@ -62,7 +65,7 @@ pinA – ロータリーエンコーダのAチャンネル<br>
 pinB – ロータリーエンコーダのBチャンネル<br>
 pinZ – ロータリーエンコーダのZチャンネル,INDEXチャンネル(省略可)<br>
 
-### ロータリーエンコーダの値を読み取る
+#### ロータリーエンコーダの値を読み取る
 ```c++
 val = name.get_count();
 ```
@@ -72,7 +75,7 @@ int型の値が返ってきます．
 戻り値:<br>
 ロータリーエンコーダの変位(int)
 
-### ピンのmodeを変える
+#### ピンのmodeを変える
 ```c++
 name.set_pinmode(pinA_mode,pinB_mode,pinZ_mode);
 ```
@@ -87,7 +90,7 @@ pinZ_mode – Zチャンネルのmode<br>
 注:<br>
 Zチャンネルを設定していない場合，modeは設定されません．<br>
 
-### ロータリーエンコーダのPPRを変える
+#### ロータリーエンコーダのPPRを変える
 ```c++
 name.set_ppr(ppr);
 ```
@@ -96,7 +99,7 @@ name.set_ppr(ppr);
 パラメーター:<br>
 ppr – 設定したいPPR<br>
 
-### ロータリーエンコーダの角度を取得する
+#### ロータリーエンコーダの角度を取得する
 ```c++
 val = name.get_angle();
 ```
@@ -105,7 +108,7 @@ val = name.get_angle();
 戻り値:<br>
 ロータリーエンコーダの角度(double)
 
-### ロータリーエンコーダの角度を弧度法で取得する
+#### ロータリーエンコーダの角度を弧度法で取得する
 ```c++
 val = name.get_angle_radian();
 ```
@@ -114,3 +117,6 @@ val = name.get_angle_radian();
 戻り値:<br>
 ロータリーエンコーダの角度(double)
 
+#### ロータリーエンコーダについているギアの歯数を設定する
+
+#### 設定されているギアの歯数を取得する
