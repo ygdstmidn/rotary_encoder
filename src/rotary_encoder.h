@@ -93,7 +93,7 @@ public:
     void set_teeth(uint set_teeth_uint);
 
     /**
-     * ロータリーエンコーダについているギアの歯数を返します．
+     * 設定されているギアの歯数を返します．
      * @return 設定されているギアの歯数
     */
     uint get_teeth();
@@ -125,6 +125,18 @@ public:
     rotary_encoder_gear(rotary_encoder_gear *rotary_encoder_gear_address);
 
     ~rotary_encoder_gear();
+
+    /**
+     * ギアの歯数を設定します．
+     * @param set_teeth_uint 設定したい歯数
+    */
+    void set_teeth(uint set_teeth_uint);
+
+    /**
+     * 設定されているギアの歯数を返します．
+     * @return 設定されているギアの歯数
+    */
+    uint get_teeth();
 };
 
 }//namespace lib_ygdstmidn

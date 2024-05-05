@@ -100,6 +100,8 @@ uint rotary_encoder::get_teeth()
     return gear_teeth;
 }
 
+//以下，rotary_encoder_gearクラス↓↓↓
+
 rotary_encoder_gear::rotary_encoder_gear(rotary_encoder *rotary_encoder_address)
 {
     rotary_encoder_ins=rotary_encoder_address;
@@ -113,11 +115,21 @@ rotary_encoder_gear::rotary_encoder_gear(rotary_encoder_gear *rotary_encoder_gea
     rotary_encoder_ins=nullptr;
     gear_ins=rotary_encoder_gear_address;
 
-    rotary_encoder_teeth=gear_ins->gear_teeth();
+    rotary_encoder_teeth=gear_ins->get_teeth();
 }
 
 rotary_encoder_gear::~rotary_encoder_gear()
 {
+}
+
+void rotary_encoder_gear::set_teeth(uint set_teeth_uint)
+{
+    gear_teeth=set_teeth_uint;
+}
+
+uint rotary_encoder_gear::get_teeth()
+{
+    return gear_teeth;
 }
 
 } // namespace lib_ygdstmidn
