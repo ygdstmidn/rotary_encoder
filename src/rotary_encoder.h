@@ -2,7 +2,7 @@
 #define INCLUDE_ROTARY_ENCODER_H
 
 #define DEVICE_INTERRUPTIN 1
-#include "mbed.h".
+#include "mbed.h"
 #include "rotary_encoder_config.h"
 
 #ifndef M_PI//M_PIが定義されていないならば定義
