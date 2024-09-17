@@ -65,6 +65,14 @@ int mbed::lib_ygdstmidn::rotary_encoder::get_count()const
     return encode_count;
 }
 
+int mbed::lib_ygdstmidn::rotary_encoder::get_count_diff()const
+{
+    static int last_count=0;
+    int diff=encode_count-last_count;
+    last_count=encode_count;
+    return diff;
+}
+
 void mbed::lib_ygdstmidn::rotary_encoder::set_pinmode(PinMode pinA, PinMode pinB, PinMode pinZ)
 {
     wa_encode_pinA->mode(pinA);

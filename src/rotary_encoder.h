@@ -59,6 +59,8 @@ public:
     */
     int get_count()const;
 
+    int get_count_diff()const;
+
     /**
      * それぞれのピンごとにmodeを設定します．
      * PullUp, PullDown, PullNone, OpenDrain
